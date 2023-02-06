@@ -16,14 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         move=findViewById(R.id.bt_nextscreen);
-        move.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,login_types.class);
-                startActivity(intent);
+        move.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this,login_types.class);
+            startActivity(intent);
 
-                // testing GIT
-            }
+            // testing GIT
         });
     }
 }
