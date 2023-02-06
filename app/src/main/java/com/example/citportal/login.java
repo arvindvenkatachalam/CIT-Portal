@@ -52,7 +52,7 @@ public class login extends AppCompatActivity {
 
                             name.setText("");
                             pass.setText("");
-                            Toast.makeText(login.this,"Successfully Updated",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(login.this,home_page.class);
                             startActivity(intent);
                         }
