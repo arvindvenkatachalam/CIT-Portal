@@ -108,7 +108,7 @@
         android:id="@+id/login"
         android:layout_width="126dp"
         android:layout_height="48dp"
-        android:background="@drawable/full_rounded_gradient"
+        android:background="@drawable/inverse_gradient"
         android:fontFamily="@font/baloo"
         android:text="Login"
         android:textColor="@color/white"
@@ -119,6 +119,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.739" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

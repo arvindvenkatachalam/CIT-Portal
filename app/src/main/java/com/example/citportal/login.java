@@ -14,17 +14,14 @@ import android.widget.Toast;
 import com.example.citportal.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
     Button login;
     EditText name,pass;
     String username, password;
-//    FirebaseDatabase db;
+    FirebaseDatabase db;
     DatabaseReference reference;
 
     @SuppressLint("MissingInflatedId")
@@ -44,40 +41,23 @@ public class login extends AppCompatActivity {
                 username = name.getText().toString();
                 password = pass.getText().toString();
 
-                if (username.isEmpty() && password.isEmpty()){
-                    Toast.makeText(login.this,"Enter both user name and password",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    System.out.println(username + " " + password);
+                if (!username.isEmpty() && !password.isEmpty()){
+
                     Users users = new Users(username,password);
-                    reference = FirebaseDatabase.getInstance("https://cit-portal-7bd3e-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users");
-//                    reference = db.getReference("Users");
-                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    db = FirebaseDatabase.getInstance("https://cit-portal-7bd3e-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                    reference = db.getReference("Users");
+                    reference.child(username).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(username)){
-                                final String getPassword = snapshot.child(username).child("password").getValue(String.class);
+                        public void onComplete(@NonNull Task<Void> task) {
 
-                                if(getPassword.equals(password)){
-                                    Toast.makeText(login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(login.this,home_page.class);
-                                    startActivity(intent);
-                                }
-                                else {
-                                    Toast.makeText(login.this, "Invalid password", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                            else
-                            {
-                                Toast.makeText(login.this,"not registered",Toast.LENGTH_SHORT).show();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(login.this,"database error",Toast.LENGTH_SHORT).show();
+                            name.setText("");
+                            pass.setText("");
+                            Toast.makeText(login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(login.this,home_page.class);
+                            startActivity(intent);
                         }
                     });
+
                 }
 
             }
