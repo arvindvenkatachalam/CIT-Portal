@@ -28,7 +28,6 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_login);
 
         login=(Button) findViewById(R.id.login);
@@ -40,7 +39,7 @@ public class login extends AppCompatActivity {
 
                 username = name.getText().toString();
                 password = pass.getText().toString();
-
+                Constants.name = username;
                 if (!username.isEmpty() && !password.isEmpty()){
 
                     Users users = new Users(username,password);

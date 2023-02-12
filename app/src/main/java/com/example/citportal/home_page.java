@@ -28,7 +28,7 @@ public class home_page extends AppCompatActivity {
     bottomNavigationView = findViewById(R.id.bottomNavigationView);
     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,home).commit();
 
-    bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+    /*bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
             switch (item.getItemId()){
@@ -47,7 +47,7 @@ public class home_page extends AppCompatActivity {
             }
             return false;
         }
-    });
+    });*/
     }
 
 }
