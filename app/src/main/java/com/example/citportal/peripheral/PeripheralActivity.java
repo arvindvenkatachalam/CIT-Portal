@@ -2,6 +2,7 @@ package com.example.citportal.peripheral;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.bluetooth.BluetoothGatt;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -68,10 +69,26 @@ public class PeripheralActivity extends AppCompatActivity {
         tvStatus = (TextView) findViewById(R.id.tv_status);
         btnSend = (Button) findViewById(R.id.btnSend);
         btnClose = (Button) findViewById(R.id.btnClose);
-
+        String text = Constants.name;
+        Calendar calendar = Calendar.getInstance();
+        String todayTime = (calendar.get(Calendar.MONTH) + 1)
+                        + "/" + calendar.get(Calendar.DAY_OF_MONTH)
+                        + " " + calendar.get(Calendar.HOUR_OF_DAY)
+                        + ":" + calendar.get(Calendar.MINUTE)
+                        + ":" + calendar.get(Calendar.SECOND);
+//        PeripheralManager.getInstance(PeripheralActivity.this).sendData(text);
+//        PeripheralManager.getInstance(PeripheralActivity.this).sendData(todayTime);
         btnSend.setOnClickListener(view -> {
-            String text = Constants.name;
+//            String text = Constants.name;
+//            Calendar calendar = Calendar.getInstance();
+//            String todayTime = (calendar.get(Calendar.MONTH) + 1)
+//                    + "/" + calendar.get(Calendar.DAY_OF_MONTH)
+//                    + " " + calendar.get(Calendar.HOUR_OF_DAY)
+//                    + ":" + calendar.get(Calendar.MINUTE)
+//                    + ":" + calendar.get(Calendar.SECOND);
+
             PeripheralManager.getInstance(PeripheralActivity.this).sendData(text);
+            PeripheralManager.getInstance(PeripheralActivity.this).sendData(todayTime);
         });
 
         btnClose.setOnClickListener(new View.OnClickListener() {

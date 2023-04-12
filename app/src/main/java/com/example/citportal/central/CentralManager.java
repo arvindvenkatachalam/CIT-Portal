@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class CentralManager {
     private final String TAG = CentralManager.class.getSimpleName();
@@ -97,26 +98,19 @@ public class CentralManager {
      * Start BLE scan
      */
      public void startScan() {
-        /**
-         * 위치 권한이 있는지 체크한다.
-         * 없다면 콜백으로 requestLocationPermission() 호출한다.
-         */
+
         if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             listener.requestLocationPermission();
             listener.onStatusMsg("Scanning Failed: no fine location permission");
             return;
         }
 
-        /**
-         * 이미 연결된 상태라면 더이상 진행시키지 않는다.
-         */
+
         if (isConnected)
             return;
 
         listener.onStatusMsg("Scanning...");
-        /**
-         * 블루투스를 사용할 수 있는 상태인지 체크한다.
-         */
+
         if (bleAdapter == null || !bleAdapter.isEnabled()) {
             listener.requestEnableBLE();
             listener.onStatusMsg("Scanning Failed: ble not enabled");
@@ -124,12 +118,6 @@ public class CentralManager {
         }
 
         bleScanner = bleAdapter.getBluetoothLeScanner();
-        System.out.println("Bleeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"+bleAdapter.isEnabled());
-        System.out.println("Testing qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"+bleScanner);
-
-        /**
-         * 이미 Gatt Server 와 연결된 상태일 수 있으니 호출해준다.
-         */
         disconnectGattServer();
 
         //// set scan filters
@@ -233,8 +221,8 @@ public class CentralManager {
 
     /**
      * Send Data
-     * Gatt Server 에 데이타를 보낸다.
-     * 20Byte 까지만 보낼 수 있다.
+     * Gatt Server
+     * 20Byte
      */
     public void sendData(String message) {
         // check connection

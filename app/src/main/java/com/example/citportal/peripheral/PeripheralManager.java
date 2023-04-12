@@ -22,7 +22,11 @@ import android.content.Context;
 import android.os.ParcelUuid;
 import android.util.Log;
 
+import com.example.citportal.Constants;
+
+import java.util.Calendar;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 
 public class PeripheralManager {
@@ -125,7 +129,7 @@ public class PeripheralManager {
     }
 
     /**
-     * Gatt Server 를 생성한다.
+     * Gatt Server.
      */
     private void startServer() {
         mGattServer = mBluetoothManager.openGattServer(mContext, bluetoothGattServerCallback);
@@ -139,7 +143,7 @@ public class PeripheralManager {
     }
 
     /**
-     * GATT Server 를 끈다.
+     * GATT Server .
      */
     private void stopServer() {
         if (mGattServer == null)
@@ -159,16 +163,7 @@ public class PeripheralManager {
         }
     }
 
-    /**
-     * 데이타를 전달한다.
-     * @param message 20바이트 제한.
-     */
     public void sendData(String message) {
-        /**
-         * 테스트중 아래의 오류가 발생한적이 있다.
-         * java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String android.bluetooth.BluetoothDevice.getAddress()' on a null object reference
-         * if 문으로 체크해보자.
-         */
         if (mBluetoothDevice == null) {
             Log.e(TAG, "BluetoothDevice is null");
             listener.onStatusMsg("BluetoothDevice is null");
@@ -206,7 +201,6 @@ public class PeripheralManager {
         }
 
         boolean indicate = (mCharacteristic.getProperties() & BluetoothGattCharacteristic.PROPERTY_INDICATE) == BluetoothGattCharacteristic.PROPERTY_INDICATE;
-        //일단은 measure라도 byte 배열로 변환해서 보내줌
         byte[] message = serverHelper.getStatusStr();
         mCharacteristic.setValue(message); // 20byte limit
         mGattServer.notifyCharacteristicChanged(mBluetoothDevice, mCharacteristic, indicate);
@@ -245,7 +239,19 @@ public class PeripheralManager {
                 if (newState == BluetoothGatt.STATE_CONNECTED) {
                     mBluetoothDevice = device;
                     listener.onStatusMsg("GattServer STATE_CONNECTED");
-
+                    Calendar calendar = Calendar.getInstance();
+                    String todayTime = (calendar.get(Calendar.MONTH) + 1)
+                            + "/" + calendar.get(Calendar.DAY_OF_MONTH)
+                            + " " + calendar.get(Calendar.HOUR_OF_DAY)
+                            + ":" + calendar.get(Calendar.MINUTE)
+                            + ":" + calendar.get(Calendar.SECOND);
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    sendData(Constants.name);
+                    sendData(todayTime);
                 } else if (newState == BluetoothGatt.STATE_DISCONNECTED) {
                     mBluetoothDevice = null;
                     listener.onStatusMsg("GattServer STATE_DISCONNECTED");

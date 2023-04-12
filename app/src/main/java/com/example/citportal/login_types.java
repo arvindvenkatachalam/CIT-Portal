@@ -24,7 +24,7 @@ public class login_types extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(login_types.this, CentralActivity.class);
+                Intent intent = new Intent(login_types.this, login_staff.class);
                 startActivity(intent);
             }
         });

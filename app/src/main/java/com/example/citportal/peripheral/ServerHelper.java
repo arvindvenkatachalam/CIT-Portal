@@ -4,7 +4,7 @@ public class ServerHelper {
     private int data;
     private int idx;
     private int status;
-    String name = "kkalchang_1";
+    String name = "test";
     public ServerHelper(int d){
         idx=0;
         data= d;
