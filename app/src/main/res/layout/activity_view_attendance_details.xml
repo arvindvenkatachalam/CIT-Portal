@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="60dp"
+    android:gravity="center"
+    android:stretchColumns="*"
+    android:background="@drawable/up_rounded_gradient">
+
+    <TableRow>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TableRow>
+                <TextView
+                    android:text="Date"
+                    android:textStyle="bold"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:text="Status"
+                    android:textStyle="bold"
+                    android:padding="8dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="May 1, 2023"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:text="Present"
+                    android:padding="8dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="May 2, 2023"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:text="Present"
+                    android:padding="8dp"/>
+            </TableRow>
+
+            <!-- Add more rows for additional dates -->
+        </TableLayout>
+    </TableRow></TableLayout>

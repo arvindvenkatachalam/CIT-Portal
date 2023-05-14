@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".internals">
+    tools:context=".internals"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -16,5 +17,301 @@
         android:textSize="20dp"
         tools:ignore="TextContrastCheck"
         android:text="Internals" />
+
+    <TableLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        tools:ignore="ExtraText"
+        android:stretchColumns="*"
+        android:background="@drawable/up_rounded_gradient"
+        >
+
+        <TableRow
+            android:layout_width="367dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="COURSE CODE : 19CS53"
+                android:fontFamily="@font/baloo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:padding="5dp"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+
+                android:layout_width="115dp"
+                android:text="Midsem - 1"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="5/7.5"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+
+                android:text="Midsem - 2"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="4.5/7.5"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Seminar"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="4.5/5"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Assignments"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="4/5"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Total"
+                android:textAlignment="center"
+                android:fontFamily="@font/baloo"
+                android:textColor="@color/white"
+                android:padding="4dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="18/25"
+                android:textAlignment="center"
+                android:fontFamily="@font/baloo"
+                android:textColor="@color/white"></TextView>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="230dp"
+        android:gravity="center"
+        tools:ignore="ExtraText"
+        android:stretchColumns="*"
+        android:background="@drawable/up_rounded_gradient"
+        >
+
+        <TableRow
+            android:layout_width="367dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="COURSE CODE : 19CS62"
+                android:fontFamily="@font/baloo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:padding="5dp"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+
+                android:layout_width="115dp"
+                android:text="Midsem - 1"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="4/7.5"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+
+                android:text="Midsem - 2"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="5/7.5"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Seminar"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="4/5"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+            android:background="#00718A"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Assignments"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="4/5"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="367dp"
+
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Total"
+                android:textAlignment="center"
+                android:fontFamily="@font/baloo"
+                android:textColor="@color/white"
+                android:padding="4dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="17/25"
+                android:textAlignment="center"
+                android:fontFamily="@font/baloo"
+                android:textColor="@color/white"></TextView>
+
+        </TableRow>
+
+
+    </TableLayout>
 
 </FrameLayout>

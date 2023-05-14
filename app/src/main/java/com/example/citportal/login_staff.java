@@ -59,7 +59,7 @@ public class login_staff extends AppCompatActivity {
 
                                 if(getPassword.equals(password)){
                                     Toast.makeText(login_staff.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(login_staff.this, CentralActivity.class);
+                                    Intent intent = new Intent(login_staff.this, staff_session.class);
                                     startActivity(intent);
                                 }
                                 else {

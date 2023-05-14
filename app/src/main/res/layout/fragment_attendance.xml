@@ -15,6 +15,34 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         tools:ignore="TextContrastCheck"
-        android:text="Attendance" />
+        android:text="Attendance"
+        />
+
+    <Button
+        android:id="@+id/view_attendance"
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/inverse_gradient"
+        android:fontFamily="@font/baloo"
+        android:layout_marginTop="250dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="VIEW ATTENDANCE"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+    <Button
+        android:id="@+id/mark"
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="330dp"
+        android:background="@drawable/inverse_gradient"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="MARK ATTENDANCE"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
 </FrameLayout>

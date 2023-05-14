@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Button;
 
 import androidx.activity.result.ActivityResultCallback;
@@ -28,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(MainActivity.this, login_types.class));
+                finish();
+            }
+        },2000);
         mPermissionResultLauncher = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), new ActivityResultCallback<Map<String, Boolean>>() {
             @Override
             public void onActivityResult(Map<String, Boolean> result) {
@@ -50,13 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         requestPermission();
-        move=findViewById(R.id.bt_nextscreen);
-        move.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this,login_types.class);
-            startActivity(intent);
 
-            // testing GIT
-        });
     }
 
     private void requestPermission()
